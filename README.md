@@ -19,21 +19,20 @@
 
 ### Why This Stack?
 
-<div dir="rtl">
-- **Frontend**: React به همراه **Tailwind CSS** باعث میشه که UI سریع و responsive باشه و از طرف دیگه **React** با کارایی بالا کمک میکنه تا اپلیکیشن خیلی نرم و منعطف بشه.
+- **Frontend**: React along with **Tailwind CSS** makes the UI fast and responsive, and on the other hand, **React** with its high performance helps to create a smooth and flexible application.
   
-- **Backend**: با استفاده از **Laravel** به‌عنوان فریم‌ورک PHP، سرعت توسعه خیلی بالا میره و ساختار MVC به‌خوبی پشتیبانی می‌شه. این فریم‌ورک قابلیت‌های خیلی قدرتمندی مثل سیستم مدیریت احراز هویت، مایگریشن‌های دیتابیس و … رو داره.
+- **Backend**: Using **Laravel** as the PHP framework accelerates development and supports MVC architecture very well. This framework provides powerful features such as authentication management, database migrations, and more.
 
-- **Database**: از **MySQL** به‌عنوان دیتابیس اصلی استفاده می‌کنم که با داده‌های ساختارمند کار می‌کنه و برای مقیاس‌های مختلف مناسب هست.
+- **Database**: I use **MySQL** as the main database, which works well with structured data and is suitable for various scales.
 
-- **Caching & Authentication**: با **Redis** کش می‌کنم که باعث افزایش سرعت درخواست‌ها می‌شه. همچنین از **JWT** برای احراز هویت تو پروژه‌های API استفاده می‌کنم.
+- **Caching & Authentication**: I use **Redis** for caching, which speeds up request handling. I also use **JWT** for authentication in API projects.
 
-- **Containerization**: پروژه‌ها به کمک **Docker** کانتینریزه می‌شن تا راحت‌تر بتونم در محیط‌های مختلف اجراشون کنم.
-</div>
+- **Containerization**: Projects are containerized using **Docker** for easier execution across different environments.
+
 ---
 
 ### Project Features
 - Full-stack app with **React** frontend and **Laravel** backend
-- Real-time features with **WebSockets** in **Laravel** 
+- Real-time features with **WebSockets** in **Laravel**
 - Secure API with **JWT Authentication**
 - Optimized frontend performance using **Code Splitting** and **Lazy Loading**
