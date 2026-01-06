@@ -7,8 +7,8 @@
   - ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
 - **Backend**: 
-  - ![Laravel](https://img.shields.io/badge/Laravel-8.x-orange)
-  - ![PHP](https://img.shields.io/badge/PHP-7.4-blue)
+  - ![Laravel](https://img.shields.io/badge/Laravel-12-orange)
+  - ![PHP](https://img.shields.io/badge/PHP-latest-blue)
   - **MySQL** (Database)
   - **Redis** (for caching)
 
