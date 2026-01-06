@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .header,
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .tech-stack {
+            margin-bottom: 30px;
+        }
+
+        .tech-stack h3 {
+            margin-bottom: 20px;
+        }
+
+        .tech-stack .badge {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .project {
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h4 {
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        .project .project-details {
+            color: #555;
+        }
+
+        .footer {
+            margin-top: 50px;
+        }
+
+        .bio-section {
+            margin-bottom: 40px;
+        }
+
+        .bio-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .bio-section p {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>My Personal Portfolio</h1>
+        <p>Your Gateway to My Tech Journey</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Bio Section -->
+        <div class="bio-section">
+            <h2>About Me</h2>
+            <p><strong>Name:</strong> Amir</p>
+            <p><strong>Bio:</strong>I am a passionate software engineer with a focus on web development. Currently, I am
+                a Computer Software Engineering student, building and contributing to projects using technologies like
+                React, Laravel, and PHP. I love coding, tackling technical challenges, and optimizing systems for better
+                performance. I enjoy pushing my limits and learning new things every day.</p>
+        </div>
+
+        <!-- Tech Stack Section -->
+        <div class="tech-stack">
+            <h3>💻 Tech Stack</h3>
+
+            <h4>Web Development</h4>
+            <div>
+                <span class="badge bg-primary">React</span>
+                <span class="badge" style="background-color: #6f42c1;">Bootstrap</span>
+                <span class="badge bg-warning">JavaScript</span>
+            </div>
+
+            <h4>Backend</h4>
+            <div>
+                <span class="badge bg-danger">Laravel</span>
+                <span class="badge bg-info">PHP</span>
+                <span class="badge bg-secondary">MySQL</span>
+                <span class="badge bg-dark">Redis</span>
+            </div>
+
+            <h4>Tools & Libraries</h4>
+            <div>
+                <span class="badge bg-dark">Axios</span>
+            </div>
+        </div>
+
+        <!-- Why This Stack Section -->
+        <div class="tech-stack">
+            <h3>Why This Stack?</h3>
+            <ul>
+                <li><strong>Frontend:</strong> <span>React helps in building fast and smooth applications, and it's
+                        highly flexible for UI development. I use Bootstrap for a simple and responsive layout
+                        structure.</span></li>
+                <li><strong>Backend:</strong> <span>Using Laravel as the PHP framework accelerates development and
+                        supports the MVC architecture well. It offers powerful features such as authentication
+                        management, database migrations, and more.</span></li>
+                <li><strong>Database:</strong> <span>I use MySQL as the main database, which works well with structured
+                        data and is suitable for various scales.</span></li>
+                <li><strong>Caching:</strong> <span>I use Redis for caching, which helps speed up request
+                        handling.</span></li>
+            </ul>
+        </div>
+
+        <!-- Project Features Section -->
+        <div class="tech-stack">
+            <h3>Project Features</h3>
+            <ul>
+                <li><strong>Full-stack app</strong> with <strong>React</strong> frontend and <strong>Laravel</strong>
+                    backend.</li>
+                <li><strong>Optimized frontend performance</strong> using <strong>Code Splitting</strong> and
+                    <strong>Lazy Loading</strong>.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sample Projects Section -->
+        <div class="projects">
+            <h3>Sample Projects</h3>
+            <div class="project">
+                <h4>Project 1: Todo List Application</h4>
+                <p class="project-details">
+                    A simple and functional <strong>Todo List</strong> application built with <strong>React</strong> for
+                    the frontend and <strong>Laravel</strong> for the backend. This app allows users to create, update,
+                    delete, and mark tasks as completed. It features authentication and is optimized for fast
+                    performance.
+                </p>
+                <a href="https://github.com/amirh1385/TodoList" target="_blank">View Project</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2026 My Personal Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap and JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JS can go here if needed for future functionality
+    </script>
+
+</body>
+
+</html>
