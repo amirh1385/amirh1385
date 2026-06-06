@@ -3,7 +3,6 @@
 ### Web Development
 - **Frontend**: 
   - ![React](https://img.shields.io/badge/React-17-blue)
-  - ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.x-purple)
   - ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
 - **Backend**: 
