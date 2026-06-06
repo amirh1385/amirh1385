@@ -35,3 +35,5 @@
 ### Project Features
 - Full-stack app with **React** frontend and **Laravel/Node.js** backend
 - Optimized frontend performance using **Code Splitting** and **Lazy Loading**
+
+[![GitHub Streak](https://streak-stats.demolab.com/?user=YOUR_USERNAME)](https://git.io/streak-stats)
