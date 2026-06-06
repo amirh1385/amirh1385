@@ -18,8 +18,6 @@
 
 ---
 
-[![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=amirh1385)](https://github.com/amirh1385)
-
 ### Why This Stack?
 
 - **Frontend**: **React** helps in building fast and smooth applications, and it's highly flexible for UI development. I use **Bootstrap** for a simple and responsive layout structure.
