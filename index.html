@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>امیر حسینی | توسعه‌دهنده</title>
+    <title>Amir Hosseini | Backend Developer</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +24,65 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        /* Persian Mode Styles */
+        body.persian {
+            direction: rtl;
+            font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body.persian .navbar-brand i {
+            margin-left: 8px;
+            margin-right: 0;
+        }
+        
+        body.persian .ms-auto {
+            margin-right: auto !important;
+            margin-left: 0 !important;
+        }
+        
+        body.persian .me-3 {
+            margin-left: 1rem !important;
+            margin-right: 0 !important;
+        }
+        
+        body.persian .me-2 {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        body.persian .ms-2 {
+            margin-right: 0.5rem !important;
+            margin-left: 0 !important;
+        }
+        
+        /* Language Toggle Button */
+        .lang-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        body.persian .lang-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        .lang-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         
         /* انیمیشن پس‌زمینه */
@@ -178,6 +237,13 @@
             animation: blink 0.7s infinite;
         }
         
+        body.persian .typed-text {
+            border-right: 3px solid white;
+            border-left: none;
+            padding-right: 5px;
+            padding-left: 0;
+        }
+        
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
@@ -214,11 +280,20 @@
             content: '';
             position: absolute;
             bottom: 0;
-            right: 0;
             width: 0;
             height: 2px;
             background: linear-gradient(90deg, #667eea, #764ba2);
             transition: width 0.3s ease;
+        }
+        
+        body:not(.persian) .nav-link::after {
+            left: 0;
+            right: auto;
+        }
+        
+        body.persian .nav-link::after {
+            right: 0;
+            left: auto;
         }
         
         .nav-link:hover::after {
@@ -292,26 +367,45 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #764ba2, #667eea);
         }
+        
+        /* Vazir font for Persian */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.0.0/dist/Vazir-Regular.ttf') format('truetype');
+            font-weight: normal;
+        }
+        
+        @font-face {
+            font-family: 'Vazir';
+            src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.0.0/dist/Vazir-Bold.ttf') format('truetype');
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+
+<!-- Language Toggle Button -->
+<button class="lang-toggle" id="langToggle">
+    <i class="fas fa-language me-2"></i>
+    <span id="toggleText">فارسی</span>
+</button>
 
 <!-- نویگیشن -->
 <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm" id="navbar">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">
             <i class="fas fa-code me-2" style="color: #667eea;"></i>
-            امیر حسینی
+            <span class="brand-name">Amir Hosseini</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#home">خانه</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">درباره</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skills">مهارت‌ها</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
+                <li class="nav-item"><a class="nav-link" href="#home" data-en="Home" data-fa="خانه">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about" data-en="About" data-fa="درباره">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills" data-en="Skills" data-fa="مهارت‌ها">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -324,20 +418,20 @@
         <div class="row align-items-center min-vh-100">
             <div class="col-lg-8 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
                 <h1 class="display-3 fw-bold mb-3">
-                    امیر حسینی
+                    <span class="hero-name">Amir Hosseini</span>
                     <span class="wave">👋</span>
                 </h1>
                 <h2 class="h3 mb-4">
                     <span id="typed-text"></span>
                     <span class="typed-text">|</span>
                 </h2>
-                <p class="lead mb-4" data-aos="fade-up" data-aos-delay="300">تمرکز روی بک‌اند | در حال یادگیری عمیق و Node.js</p>
+                <p class="lead mb-4 hero-desc" data-aos="fade-up" data-aos-delay="300">Focus on Backend | Learning Deeply & Node.js</p>
                 <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
-                    <a href="#contact" class="btn btn-light btn-lg px-4" data-aos="zoom-in" data-aos-delay="500">
-                        <i class="fas fa-comment me-2"></i>ارتباط
+                    <a href="#contact" class="btn btn-light btn-lg px-4 contact-btn" data-aos="zoom-in" data-aos-delay="500">
+                        <i class="fas fa-comment me-2"></i><span class="contact-text">Contact</span>
                     </a>
-                    <a href="#skills" class="btn btn-outline-light btn-lg px-4" data-aos="zoom-in" data-aos-delay="600">
-                        <i class="fas fa-code me-2"></i>مهارت‌ها
+                    <a href="#skills" class="btn btn-outline-light btn-lg px-4 skills-btn" data-aos="zoom-in" data-aos-delay="600">
+                        <i class="fas fa-code me-2"></i><span class="skills-text">Skills</span>
                     </a>
                 </div>
             </div>
@@ -355,14 +449,14 @@
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-duration="800">
-                <h2 class="display-5 fw-bold mb-4 gradient-text">تحصیلات</h2>
+                <h2 class="display-5 fw-bold mb-4 gradient-text about-title">Education</h2>
                 <div class="mb-4" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-graduation-cap fs-1 text-primary mb-3"></i>
-                    <h4>کاردانی مهندسی نرم‌افزار</h4>
-                    <p class="text-muted">دانشکده فنی شهید منتظری | ترم ۲</p>
+                    <h4 class="degree-title">Associate Degree in Software Engineering</h4>
+                    <p class="text-muted university-name">Shahid Montazeri Technical College | Semester 2</p>
                 </div>
-                <p class="text-muted" data-aos="fade-up" data-aos-delay="400">
-                    دانشجوی ترم ۲ کاردانی نرم‌افزار. در حال یادگیری تخصصی برنامه‌نویسی backend.
+                <p class="text-muted about-desc" data-aos="fade-up" data-aos-delay="400">
+                    Software engineering student in 2nd semester. Specializing in backend development.
                 </p>
             </div>
         </div>
@@ -372,7 +466,7 @@
 <!-- مهارت‌های فنی -->
 <section id="skills" class="py-5 bg-light">
     <div class="container py-5">
-        <h2 class="text-center display-5 fw-bold mb-5 gradient-text" data-aos="fade-down" data-aos-duration="800">مهارت‌های فنی</h2>
+        <h2 class="text-center display-5 fw-bold mb-5 gradient-text skills-main-title" data-aos="fade-down" data-aos-duration="800">Technical Skills</h2>
         
         <div class="row g-4">
             <!-- Backend -->
@@ -380,7 +474,7 @@
                 <div class="card skill-card p-4 h-100">
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-server fs-1 text-primary me-3"></i>
-                        <h3 class="h4 mb-0">بک‌اند</h3>
+                        <h3 class="h4 mb-0 backend-title">Backend</h3>
                     </div>
                     <div class="mb-3">
                         <div class="d-flex justify-content-between mb-1">
@@ -426,7 +520,7 @@
                 <div class="card skill-card p-4 h-100">
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-database fs-1 text-primary me-3"></i>
-                        <h3 class="h4 mb-0">پایگاه داده</h3>
+                        <h3 class="h4 mb-0 database-title">Database</h3>
                     </div>
                     <div class="mb-3">
                         <div class="d-flex justify-content-between mb-1">
@@ -463,7 +557,7 @@
                 <div class="card skill-card p-4 h-100">
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-tools fs-1 text-primary me-3"></i>
-                        <h3 class="h4 mb-0">ابزارها</h3>
+                        <h3 class="h4 mb-0 tools-title">Tools</h3>
                     </div>
                     <div class="mb-3">
                         <div class="d-flex justify-content-between mb-1">
@@ -500,7 +594,7 @@
                 <div class="card skill-card p-4 h-100">
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-globe fs-1 text-primary me-3"></i>
-                        <h3 class="h4 mb-0">فرانت‌اند (مقدماتی)</h3>
+                        <h3 class="h4 mb-0 frontend-title">Frontend (Basic)</h3>
                     </div>
                     <div class="mb-3">
                         <div class="d-flex justify-content-between mb-1">
@@ -540,20 +634,20 @@
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="display-5 fw-bold mb-4 gradient-text" data-aos="fade-down" data-aos-duration="800">ارتباط</h2>
+                <h2 class="display-5 fw-bold mb-4 gradient-text contact-main-title" data-aos="fade-down" data-aos-duration="800">Contact</h2>
                 
                 <div class="row g-4 mb-5">
                     <div class="col-md-6" data-aos="flip-left" data-aos-delay="100">
                         <div class="stat-box">
                             <i class="fab fa-github fs-1 text-primary mb-2"></i>
-                            <h6>گیتهاب</h6>
+                            <h6>GitHub</h6>
                             <p class="small text-muted">github.com/amirh1385msh</p>
                         </div>
                     </div>
                     <div class="col-md-6" data-aos="flip-right" data-aos-delay="200">
                         <div class="stat-box">
                             <i class="fas fa-envelope fs-1 text-primary mb-2"></i>
-                            <h6>ایمیل</h6>
+                            <h6>Email</h6>
                             <p class="small text-muted">amirh1385.dev@gmail.com</p>
                         </div>
                     </div>
@@ -569,8 +663,8 @@
         <div class="mb-3">
             <a href="https://github.com/amirh1385" class="social-icon text-white"><i class="fab fa-github"></i></a>
         </div>
-        <p class="mb-0 small opacity-75">
-            امیر حسینی | توسعه‌دهنده
+        <p class="mb-0 small opacity-75 footer-text">
+            Amir Hosseini | Backend Developer
         </p>
     </div>
 </footer>
@@ -585,6 +679,163 @@
         offset: 100
     });
     
+    // Language data
+    const translations = {
+        en: {
+            brand: "Amir Hosseini",
+            navHome: "Home",
+            navAbout: "About",
+            navSkills: "Skills",
+            navContact: "Contact",
+            heroName: "Amir Hosseini",
+            heroDesc: "Focus on Backend | Learning Deeply & Node.js",
+            contactBtn: "Contact",
+            skillsBtn: "Skills",
+            aboutTitle: "Education",
+            degree: "Associate Degree in Software Engineering",
+            university: "Shahid Montazeri Technical College | Semester 2",
+            aboutDesc: "Software engineering student in 2nd semester. Specializing in backend development.",
+            skillsTitle: "Technical Skills",
+            backend: "Backend",
+            database: "Database",
+            tools: "Tools",
+            frontend: "Frontend (Basic)",
+            contactTitle: "Contact",
+            github: "GitHub",
+            email: "Email",
+            footer: "Amir Hosseini | Backend Developer",
+            toggleBtn: "فارسی",
+            typingTexts: ["Backend Developer", "Software Engineering Student", "Passionate about Backend"]
+        },
+        fa: {
+            brand: "امیر حسینی",
+            navHome: "خانه",
+            navAbout: "درباره",
+            navSkills: "مهارت‌ها",
+            navContact: "تماس",
+            heroName: "امیر حسینی",
+            heroDesc: "تمرکز روی بک‌اند | در حال یادگیری عمیق و Node.js",
+            contactBtn: "ارتباط",
+            skillsBtn: "مهارت‌ها",
+            aboutTitle: "تحصیلات",
+            degree: "کاردانی مهندسی نرم‌افزار",
+            university: "دانشکده فنی شهید منتظری | ترم ۲",
+            aboutDesc: "دانشجوی ترم ۲ کاردانی نرم‌افزار. در حال یادگیری تخصصی برنامه‌نویسی backend.",
+            skillsTitle: "مهارت‌های فنی",
+            backend: "بک‌اند",
+            database: "پایگاه داده",
+            tools: "ابزارها",
+            frontend: "فرانت‌اند (مقدماتی)",
+            contactTitle: "ارتباط",
+            github: "گیتهاب",
+            email: "ایمیل",
+            footer: "امیر حسینی | توسعه‌دهنده بک‌اند",
+            toggleBtn: "English",
+            typingTexts: ["توسعه‌دهنده", "دانشجوی مهندسی نرم‌افزار", "علاقه‌مند به بک‌اند"]
+        }
+    };
+    
+    let currentLang = 'en';
+    
+    function updateLanguage(lang) {
+        currentLang = lang;
+        const t = translations[lang];
+        
+        // Update HTML lang and direction
+        document.documentElement.lang = lang === 'en' ? 'en' : 'fa';
+        document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
+        
+        // Update body class for Persian
+        if (lang === 'fa') {
+            document.body.classList.add('persian');
+        } else {
+            document.body.classList.remove('persian');
+        }
+        
+        // Update brand name
+        document.querySelector('.brand-name').textContent = t.brand;
+        
+        // Update navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const text = lang === 'en' ? link.getAttribute('data-en') : link.getAttribute('data-fa');
+            if (text) link.textContent = text;
+        });
+        
+        // Update hero section
+        document.querySelector('.hero-name').textContent = t.heroName;
+        document.querySelector('.hero-desc').textContent = t.heroDesc;
+        document.querySelector('.contact-btn .contact-text').textContent = t.contactBtn;
+        document.querySelector('.skills-btn .skills-text').textContent = t.skillsBtn;
+        
+        // Update about section
+        document.querySelector('.about-title').textContent = t.aboutTitle;
+        document.querySelector('.degree-title').textContent = t.degree;
+        document.querySelector('.university-name').textContent = t.university;
+        document.querySelector('.about-desc').textContent = t.aboutDesc;
+        
+        // Update skills section
+        document.querySelector('.skills-main-title').textContent = t.skillsTitle;
+        document.querySelector('.backend-title').textContent = t.backend;
+        document.querySelector('.database-title').textContent = t.database;
+        document.querySelector('.tools-title').textContent = t.tools;
+        document.querySelector('.frontend-title').textContent = t.frontend;
+        
+        // Update contact section
+        document.querySelector('.contact-main-title').textContent = t.contactTitle;
+        const statBoxes = document.querySelectorAll('.stat-box h6');
+        if (statBoxes[0]) statBoxes[0].textContent = t.github;
+        if (statBoxes[1]) statBoxes[1].textContent = t.email;
+        
+        // Update footer
+        document.querySelector('.footer-text').textContent = t.footer;
+        
+        // Update toggle button text
+        document.getElementById('toggleText').textContent = t.toggleBtn;
+        
+        // Restart typing animation with new texts
+        if (window.typingInterval) clearInterval(window.typingInterval);
+        startTypingAnimation(t.typingTexts);
+    }
+    
+    // Typing animation with dynamic texts
+    let typingTimeout;
+    function startTypingAnimation(texts) {
+        let count = 0;
+        let index = 0;
+        const typedElement = document.getElementById("typed-text");
+        
+        function type() {
+            if (count === texts.length) count = 0;
+            const currentText = texts[count];
+            const letter = currentText.slice(0, ++index);
+            typedElement.innerHTML = letter;
+            
+            if (letter.length === currentText.length) {
+                setTimeout(() => {
+                    index = 0;
+                    count++;
+                    type();
+                }, 2000);
+            } else {
+                typingTimeout = setTimeout(type, 100);
+            }
+        }
+        
+        if (typingTimeout) clearTimeout(typingTimeout);
+        index = 0;
+        count = 0;
+        type();
+    }
+    
+    // Language toggle
+    document.getElementById('langToggle').addEventListener('click', () => {
+        const newLang = currentLang === 'en' ? 'fa' : 'en';
+        updateLanguage(newLang);
+    });
+    
+    // Initialize with English
+    updateLanguage('en');
+    
     // افکت تغییر نوار نویگیشن در اسکرول
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
@@ -594,35 +845,6 @@
             navbar.classList.remove('scrolled');
         }
     });
-    
-    // انیمیشن تایپینگ
-    const texts = ["توسعه‌دهنده", "دانشجوی مهندسی نرم‌افزار", "علاقه‌مند به بک‌اند"];
-    let count = 0;
-    let index = 0;
-    let currentText = "";
-    let letter = "";
-    
-    function type() {
-        if (count === texts.length) {
-            count = 0;
-        }
-        currentText = texts[count];
-        letter = currentText.slice(0, ++index);
-        
-        document.getElementById("typed-text").innerHTML = letter;
-        
-        if (letter.length === currentText.length) {
-            setTimeout(() => {
-                index = 0;
-                count++;
-                type();
-            }, 2000);
-        } else {
-            setTimeout(type, 100);
-        }
-    }
-    
-    type();
     
     // انیمیشن نوارهای پیشرفت هنگام اسکرول
     const progressBars = document.querySelectorAll('.progress-bar');
@@ -691,21 +913,6 @@
             }
         });
     });
-    
-    // انیمیشن شمارنده (اختیاری)
-    function animateCounter(element, target) {
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                element.textContent = target;
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current);
-            }
-        }, 20);
-    }
 </script>
 
 <style>
